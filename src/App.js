@@ -70,10 +70,10 @@ export default function Portfolio() {
       `}</style>
 
       {/* Navbar - Fixed */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 backdrop-blur-sm bg-black/60 border-b border-gray-800/30">
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-8 py-4 md:py-6 backdrop-blur-sm bg-black/60 border-b border-gray-800/30">
         {/* Profile Photo */}
         <div className="flex items-center">
-          <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 p-0.5">
+          <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 p-0.5">
             <div className="w-full h-full rounded-full bg-black flex items-center justify-center text-xl font-bold">
               <img 
                 src="/me.jpg" 
@@ -85,22 +85,22 @@ export default function Portfolio() {
         </div>
 
         {/* Nav Links */}
-        <div className="flex gap-8">
+        <div className="flex gap-4 md:gap-8">
           <button 
             onClick={() => scrollToSection('home')}
-            className="hover:text-purple-400 transition-colors duration-300 font-medium text-gray-300 text-lg"
+            className="hover:text-purple-400 transition-colors duration-300 font-medium text-gray-300 text-sm md:text-lg"
           >
             Home
           </button>
           <button 
             onClick={() => scrollToSection('projects')}
-            className="hover:text-purple-400 transition-colors duration-300 font-medium text-gray-300 text-lg"
+            className="hover:text-purple-400 transition-colors duration-300 font-medium text-gray-300 text-sm md:text-lg"
           >
             Projects
           </button>
           <button 
             onClick={() => setShowContactModal(true)}
-            className="hover:text-purple-400 transition-colors duration-300 font-medium text-gray-300 text-lg"
+            className="hover:text-purple-400 transition-colors duration-300 font-medium text-gray-300 text-sm md:text-lg"
           >
             Contact
           </button>
@@ -108,15 +108,15 @@ export default function Portfolio() {
       </nav>
 
       {/* Main Content */}
-      <main id="home" className="relative z-10 container mx-auto px-8">
-        <div className="flex items-center justify-between gap-16 max-w-7xl mx-auto min-h-screen">
+      <main id="home" className="relative z-10 container mx-auto px-4 md:px-8">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16 max-w-7xl mx-auto min-h-screen py-20 lg:py-0">
           {/* Left Side - Text Content */}
-          <div className="flex-1 space-y-6">
-            <h1 className="text-7xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent">
+          <div className="flex-1 space-y-4 md:space-y-6 text-center lg:text-left">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent">
               Amit Gupta
             </h1>
             
-            <p className="text-xl text-gray-400 leading-relaxed max-w-2xl">
+            <p className="text-base sm:text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto lg:mx-0">
               I'm a Full Stack Developer & Creative Designer passionate about building beautiful, 
               functional web experiences. I transform ideas into elegant digital solutions 
               that make a difference. With expertise in modern technologies and a keen eye 
@@ -124,26 +124,26 @@ export default function Portfolio() {
             </p>
 
             {/* Buttons */}
-            <div className="flex gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-4 justify-center lg:justify-start">
               <button 
                 onClick={() => setShowContactModal(true)}
-                className="flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-700 to-indigo-700 rounded-full hover:from-purple-600 hover:to-indigo-600 transition-all duration-300 transform hover:scale-105 font-semibold shadow-lg shadow-purple-900/50"
+                className="flex items-center justify-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-purple-700 to-indigo-700 rounded-full hover:from-purple-600 hover:to-indigo-600 transition-all duration-300 transform hover:scale-105 font-semibold shadow-lg shadow-purple-900/50 text-sm md:text-base"
               >
-                <Send size={20} />
+                <Send size={18} className="md:w-5 md:h-5" />
                 Contact Me
               </button>
               
               <button 
                 onClick={handleDownloadCV}
-                className="flex items-center gap-2 px-8 py-4 border-2 border-purple-700 rounded-full hover:bg-purple-900/30 transition-all duration-300 transform hover:scale-105 font-semibold text-gray-300">
-                <Download size={20} />
+                className="flex items-center justify-center gap-2 px-6 md:px-8 py-3 md:py-4 border-2 border-purple-700 rounded-full hover:bg-purple-900/30 transition-all duration-300 transform hover:scale-105 font-semibold text-gray-300 text-sm md:text-base">
+                <Download size={18} className="md:w-5 md:h-5" />
                 Download CV
               </button>
             </div>
           </div>
 
           {/* Right Side - Profile Photo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 order-first lg:order-last">
             <div className="relative">
               {/* Outer glowing ring */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-700 via-indigo-700 to-violet-700 blur-2xl opacity-40"></div>
@@ -152,7 +152,7 @@ export default function Portfolio() {
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-700 to-indigo-700 pulse-ring"></div>
               
               {/* Main photo container */}
-              <div className="relative w-80 h-80 rounded-full bg-gradient-to-r from-purple-700 via-indigo-700 to-violet-700 p-1">
+              <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full bg-gradient-to-r from-purple-700 via-indigo-700 to-violet-700 p-1">
                 <div className="w-full h-full rounded-full bg-black p-2">
                   <div className="w-full h-full rounded-full bg-gradient-to-br from-gray-900 to-black flex items-center justify-center text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400 overflow-hidden">
                     <img 
@@ -165,25 +165,25 @@ export default function Portfolio() {
               </div>
 
               {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-purple-700 rounded-full blur-xl opacity-30"></div>
-              <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-indigo-700 rounded-full blur-xl opacity-30"></div>
+              <div className="absolute -top-4 -right-4 w-16 h-16 md:w-20 md:h-20 bg-purple-700 rounded-full blur-xl opacity-30"></div>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 md:w-20 md:h-20 bg-indigo-700 rounded-full blur-xl opacity-30"></div>
             </div>
           </div>
         </div>
       </main>
 
       {/* Projects Section */}
-      <section id="projects" className="relative z-10 min-h-screen flex items-center justify-center px-8">
+      <section id="projects" className="relative z-10 min-h-screen flex items-center justify-center px-4 md:px-8">
         <div className="text-center">
-          <h2 className="text-5xl font-bold mb-4 text-gray-200">Projects</h2>
-          <p className="text-gray-500 mb-8">Coming soon...</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-200">Projects</h2>
+          <p className="text-gray-500 mb-8 text-sm sm:text-base">Coming soon...</p>
           
           {/* Back to Home Button */}
           <button 
             onClick={() => scrollToSection('home')}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-700 to-indigo-700 rounded-full hover:from-purple-600 hover:to-indigo-600 transition-all duration-300 transform hover:scale-105 font-semibold shadow-lg shadow-purple-900/50"
+            className="inline-flex items-center gap-2 px-5 md:px-6 py-2.5 md:py-3 bg-gradient-to-r from-purple-700 to-indigo-700 rounded-full hover:from-purple-600 hover:to-indigo-600 transition-all duration-300 transform hover:scale-105 font-semibold shadow-lg shadow-purple-900/50 text-sm md:text-base"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="md:w-5 md:h-5">
               <path d="M19 12H5M12 19l-7-7 7-7"/>
             </svg>
             Back to Home
